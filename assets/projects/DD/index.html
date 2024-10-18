@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartas Personagens</title>
+    <link rel="stylesheet" href="./src/assets/css/reset.css">
+    <link rel="stylesheet" href="./src/assets/css/style.css">
+    <link rel="stylesheet" href="./src/assets/css/modal.css">
+    <link rel="icon" type="image/x-icon" href="./src/assets/img/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Smythe&family=UnifrakturMaguntia&display=swap"
+        rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1 class="titulo"><img src="./src/assets/img/logo.png" alt="logo Devs&Dragons"></h1>
+        <button class="botao-duelar">Duelar!</button>
+    </header>
+
+    <ul id="personagens" class="personagens"></ul>
+
+    <div class="fundo-modal" id="fundo-modal"></div>
+    <div class="modal" id="modal">
+        <img src="./src/assets/img/trofeu.png" alt="">
+        <span class="mensagem"></span>
+        <button class="modal-fechar-botao" id="fechar-botao"><i class="fa fa-times"></i></button>
+    </div>
+
+    <script type="module" src="./src/index.js"></script>
+</body>
+
+</html>

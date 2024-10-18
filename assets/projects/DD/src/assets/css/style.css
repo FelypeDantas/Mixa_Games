@@ -1,0 +1,312 @@
+:root {
+    --fonte-titulo-cartas: 'UnifrakturMaguntia', cursive;
+    --fonte-textos: 'Smythe', cursive;
+}
+
+/*Genéricos*/
+
+body {
+    font-family: var(--fonte-textos);
+    background-image: url(../img/fundo-madeira.png);
+    height: 100vh;
+}
+
+header,
+.personagens {
+    width: 75%;
+    margin: auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    max-width: 1357px;
+}
+
+.titulo {
+    color: white;
+    font-size: 48px;
+}
+
+.botao-duelar {
+    background: linear-gradient(180deg, #FAEC75 0%, #CE9424 100%);
+    border: 2px solid #6C3F00;
+    border-radius: 16px;
+    font-family: var(--fonte-titulo-cartas);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 31px;
+    padding: 8px 36px;
+}
+
+.personagens {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    max-width: 1357px;
+}
+
+.personagem {
+    width: 252.18px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.personagem.selecionado {
+    transform: translateY(-1.25rem);
+}
+
+.container-superior {
+    height: 332px;
+    position: relative;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 137px;
+}
+
+.combate {
+    height: 53.33px;
+    width: 53.33px;
+    background-size: contain;
+}
+
+.level {
+    height: 22.86px;
+    display: flex;
+    width: 74.66px;
+    align-items: center;
+    margin-top: 8px;
+    margin-right: 8px;
+    position: relative;
+    z-index: 99;
+}
+
+.aumentar-level,
+.diminuir-level {
+    font-family: var(--fonte-textos);
+    color: #817462;
+    font-size: 18px;
+    background-color: #CDC8C1;
+    width: 14.86px
+}
+
+.aumentar-level {
+    border: 1px solid #817462;
+    border-radius: 4px 0 0 4px;
+}
+
+.diminuir-level {
+    border: 1px solid #817462;
+    border-radius: 0 4px 4px 0;
+}
+
+.level-texto {
+    width: 45.71px;
+    border-bottom: 1px solid #817462;
+    border-top: 1px solid #817462;
+    color: #CDC8C1;
+    text-align: center;
+    height: 22.86px;
+    padding-top: 2px;
+}
+
+.container-imagem {
+    height: 160px;
+    height: 166px;
+    width: 79%;
+    position: absolute;
+    top: 21px;
+    left: 25px;
+}
+
+.imagem {
+    height: 148.56px;
+}
+
+.container-tipo {
+    background-image: url(../img/tarja-azul.png);
+    background-repeat: no-repeat;
+    height: 40px;
+    width: 78%;
+    position: absolute;
+    top: 125px;
+    left: 25px;
+}
+
+.tipo {
+    font-family: var(--fonte-titulo-cartas);
+    text-align: center;
+    padding: 12px 0;
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.container-nome {
+    background-image: url(../img/fundo-nome.png);
+    background-repeat: no-repeat;
+    height: 31.63px;
+    width: 191px;
+    margin: auto;
+
+}
+
+.nome {
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+
+}
+
+.container-descricao {
+    background-image: url(../img/fundo-descricao.png);
+    background-repeat: no-repeat;
+    height: 92px;
+    width: 191px;
+    margin: auto;
+}
+
+.descricao {
+    font-size: 18px;
+    line-height: 21px;
+    color: #554B40;
+    padding: 8px 16px;
+}
+
+.container-inferior {
+    height: 65px;
+    gap: 8px;
+    display: grid;
+    padding: 8px 16px;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas:
+        "mana insignia vida"
+        "valor-mana insignia valor-vida";
+}
+
+.mana,
+.vida,
+.insignia {
+    color: #CDC8C1;
+}
+
+.mana {
+    grid-area: valor-mana;
+}
+
+.vida {
+    grid-area: valor-vida;
+}
+
+.icone-vida {
+    grid-area: vida;
+}
+
+.icone-mana {
+    grid-area: mana;
+}
+
+.insignia {
+    grid-area: insignia;
+    justify-self: center;
+    align-self: center;
+    font-size: 20px;
+    text-align: center;
+
+}
+
+/*Mago*/
+
+.Mago .container-superior {
+    background-image: url(../img/fundo-carta-verde.png);
+}
+
+.Mago .container-inferior {
+    background-image: url(../img/retangulo-verde.png);
+}
+
+.Mago .combate {
+    background-image: url(../img/combate-mago.png);
+}
+
+.Mago .level-texto {
+    background: radial-gradient(#1F270A, #66A002);
+}
+
+.Mago .imagem {
+    background-image: url(../img/mago.png);
+    background-repeat: no-repeat;
+}
+
+/*Arqueiro*/
+
+.Arqueiro .container-superior {
+    background-image: url(../img/fundo-carta-azul.png);
+}
+
+.Arqueiro .container-inferior {
+    background-image: url(../img/retangulo-azul.png);
+}
+
+.Arqueiro .combate {
+    background-image: url(../img/combate-arqueiro.png);
+}
+
+.Arqueiro .level-texto {
+    background: radial-gradient(#072041, #145BAB);
+}
+
+.Arqueiro .imagem {
+    background-image: url(../img/arqueiro.png);
+    background-repeat: no-repeat;
+}
+
+/*Guerreiro*/
+
+.Guerreiro .container-superior {
+    background-image: url(../img/fundo-carta-vermelha.png);
+}
+
+.Guerreiro .container-inferior {
+    background-image: url(../img/retangulo-vermelho.png);
+}
+
+.Guerreiro .combate {
+    background-image: url(../img/combate-guerreiro.png);
+}
+
+.Guerreiro .level-texto {
+    background: radial-gradient(#56272D, #C1272D);
+}
+
+.Guerreiro .imagem {
+    background-image: url(../img/guerreiro.png);
+    background-repeat: no-repeat;
+}
+
+/*ArqueiroMago*/
+
+.ArqueiroMago .container-superior {
+    background-image: url(../img/fundo-carta-roxa.png);
+}
+
+.ArqueiroMago .container-inferior {
+    background-image: url(../img/retangulo-roxo.png);
+}
+
+.ArqueiroMago .combate {
+    background-image: url(../img/combate-arqueiro-Mago.png);
+}
+
+.ArqueiroMago .level-texto {
+    background: radial-gradient(#3D003F, #93278F);
+}
+
+.ArqueiroMago .imagem {
+    background-image: url(../img/arqueiro-mago.png);
+    background-repeat: no-repeat;
+}
