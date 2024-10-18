@@ -1,0 +1,55 @@
+.modal {
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+    position: absolute;
+    top: 40%;
+    left: 0;
+    right: 0;
+    width: 336px;
+    height: 120px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(180deg, #FAEC75 0%, #CE9424 100%);
+    border: 2px solid #6C3F00;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+}
+
+.modal-fechar-botao {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+}
+
+.fundo-modal {
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+}
+
+.visivel {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.mensagem {
+    font-size: 24px;
+    line-height: 28px;
+    color: #6C3F00;
+    margin-left: 24px;
+}
