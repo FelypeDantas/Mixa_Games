@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Mega-Sena</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            margin: auto;
+            max-width: 400px;
+        }
+        input[type="number"] {
+            width: 80%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .resultado {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #4CAF50;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Jogo da Mega-Sena</h1>
+    <p>Digite os 6 números do seu jogo:</p>
+    <input type="number" min="1" max="60" id="num1">
+    <input type="number" min="1" max="60" id="num2">
+    <input type="number" min="1" max="60" id="num3">
+    <input type="number" min="1" max="60" id="num4">
+    <input type="number" min="1" max="60" id="num5">
+    <input type="number" min="1" max="60" id="num6">
+    <br>
+    <button onclick="sortear()">Sortear Números</button>
+
+    <div class="resultado" id="resultado" style="display:none;"></div>
+</div>
+
+<script>
+function sortear() {
+    var numerosJogados = [];
+    for (var i = 1; i <= 6; i++) {
+        numerosJogados.push(parseInt(document.getElementById("num" + i).value));
+    }
+
+    var numerosSorteados = [];
+    while (numerosSorteados.length < 6) {
+        var num = Math.floor(Math.random() * 60) + 1;
+        if (!numerosSorteados.includes(num)) {
+            numerosSorteados.push(num);
+        }
+    }
+
+    var acertos = quantidadeAcertos(numerosJogados, numerosSorteados);
+    mostrarResultado(numerosJogados, numerosSorteados, acertos);
+}
+
+function quantidadeAcertos(jogados, sorteados) {
+    var acertos = 0;
+    for (var i = 0; i < jogados.length; i++) {
+        if (sorteados.includes(jogados[i])) {
+            acertos++;
+        }
+    }
+    return acertos;
+}
+
+function mostrarResultado(jogados, sorteados, acertos) {
+    var resultadoDiv = document.getElementById("resultado");
+    resultadoDiv.style.display = "block";
+    resultadoDiv.innerHTML = `
+        <h3>Resultado</h3>
+        <p>Você jogou: ${jogados.join(', ')}</p>
+        <p>Números sorteados: ${sorteados.join(', ')}</p>
+        <p>Você acertou ${acertos} número(s).</p>
+    `;
+}
+</script>
+
+</body>
+</html>

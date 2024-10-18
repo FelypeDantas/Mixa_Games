@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <!-- settings --->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detona Ralph</title>
+    <link rel="shortcut icon" href="src/img/favicon.jpg" type="image/x-icon">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./src/styles/style.css">
+</head>
+
+<body>
+    <main>
+        <div class="menu">
+            <div class="menu-time">
+                <h2 style="color: red;">Time Left</h2>
+                <h2 class="second" id="time-left">0</h2>
+            </div>
+            <div class="menu-score">
+                <h2 style="color: red;">Your Score</h2>
+                <h2 class="second" id="score">0</h2>
+            </div>
+            <div class="menu-lives">
+                <img src="./src/img/player.png" alt="Personagem do Player" height="60px">
+                <h2 id="life">x3</h2>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-row">
+                <div class="square enemy" id="1"></div>
+                <div class="square" id="2"></div>
+                <div class="square" id="3"></div>
+            </div>
+
+            <div class="panel-row">
+                <div class="square" id="4"></div>
+                <div class="square" id="5"></div>
+                <div class="square" id="6"></div>
+            </div>
+
+            <div class="panel-row">
+                <div class="square" id="7"></div>
+                <div class="square" id="8"></div>
+                <div class="square" id="9"></div>
+            </div>
+        </div>
+        <button id="show-history">Mostrar Histórico</button>
+        <div id="history"></div>
+    </main>
+    <script defer src="src/scripts/script.js"></script>
+</body>
+
+</html>

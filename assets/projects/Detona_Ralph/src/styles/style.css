@@ -1,0 +1,61 @@
+@import url('reset.css');
+
+body{
+    width: 100%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-image: url(../img/wall.png);
+}
+
+.menu {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 90px;
+    width: 100%;
+    background-color: #000000;
+    color: #ffffff;
+    border-bottom: 5px solid #ffd700;
+}
+
+.menu-lives{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.second {
+    margin-top: 10px;
+}
+
+.panel{
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.square {
+    height: 150px;
+    width: 150px;
+    border: 1px solid #000000;
+    background-color: #1aeaa5;
+}
+
+.enemy {
+    background-image: url(../img/ralph.png);
+    background-size: cover;
+}
+
+#show-history{
+    margin-top: 1rem;
+}
+
+#history{
+    color: #f0f8ff;
+    margin-top: 0.5rem;
+}
