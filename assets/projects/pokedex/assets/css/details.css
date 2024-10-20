@@ -1,0 +1,33 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.content {
+    position: relative;
+    text-align: center;
+    background-color: #fff;
+    padding: 2rem 9rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #6c79db;
+    color: #ffffff;
+    border-radius: 1rem;
+    text-decoration: none;
+}
+
+.back-button:hover {
+    background-color: #5a68b3;
+}
