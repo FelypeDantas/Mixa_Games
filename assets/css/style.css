@@ -16,18 +16,23 @@ h1 {
 }
 
 .card {
-    transition: transform 0.8s ease;
+    transition: transform 0.3s ease, box-shadow 0.3 ease;
 }
 
 .card:hover {
     transform: scale(1.05) rotateY(360deg);
     z-index: 1;
     padding: 1.5rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .card-img-top {
     display: block;
     transition: transform 0.3s ease;
+}
+
+.card-img-top:hover {
+    transform: scale(1.1); 
 }
 
 .botao-padrao.btn {
