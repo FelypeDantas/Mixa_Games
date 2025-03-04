@@ -17,7 +17,6 @@ Mixa-Games é um gerenciador de jogos online no estilo Friv. Com uma coleção d
 - HTML5
 - CSS3
 - JavaScript
-- [Outras tecnologias que você usou]
 
 ## Como Executar
 
@@ -26,3 +25,4 @@ Para executar o Mixa-Games localmente, siga os passos abaixo:
 1. Clone o repositório:
    ```bash
    git clone https://github.com/seu_usuario/Mixa-Games.git
+´´´
