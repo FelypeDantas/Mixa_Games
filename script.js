@@ -74,8 +74,8 @@ const projects = [
     {
         title: "Jogo da velha",
         imgSrc: "./assets/img/jogodavelha.png",
-        link: "./assets/projects/superMario/index.html",
-        alt: "Mario Jump"
+        link: "./assets/projects/jogodavelha/index.html",
+        alt: "Jogo da velha"
     }
 ];
 
