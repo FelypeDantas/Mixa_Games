@@ -89,7 +89,7 @@ function createCards() {
         card.style.width = '20rem';
 
         card.innerHTML = `
-            <img src="${project.imgSrc}" class="card-img-top" alt="${project.alt}" loading="lazy>
+            <img src="${project.imgSrc}" class="card-img-top" alt="${project.alt}" loading="lazy">
             <div class="card-body">
                 <h5 class="card-title py-2 fw-bold">${project.title}</h5>
                 <a href="${project.link}" class="btn botao-padrao w-100 fw-bold" aria-controls="offcanvasRight">Quero Jogar</a>
