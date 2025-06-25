@@ -74,7 +74,7 @@ const projects = [
     {
         title: "Jogo da velha",
         imgSrc: "./assets/img/jogodavelha.png",
-        link: "./assets/projects/jogodavelha/index.html",
+        link: "./assets/projects/jogodaVelha/index.html",
         alt: "Jogo da velha"
     }
 ];
