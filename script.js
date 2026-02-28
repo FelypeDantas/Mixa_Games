@@ -76,6 +76,12 @@ const projects = [
         imgSrc: "./assets/img/jogodavelha.png",
         link: "./assets/projects/jogodaVelha/index.html",
         alt: "Jogo da velha"
+    },
+    {
+        title: "Mini Paint",
+        imgSrc: "./assets/img/MiniPaint.png",
+        link: "https://felypedantas.github.io/Gallery_draw/",
+        alt: "Mini Paint"
     }
 ];
 
