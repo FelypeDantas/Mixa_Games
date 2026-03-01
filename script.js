@@ -80,7 +80,7 @@ const projects = [
     {
         title: "Mini Paint",
         imgSrc: "./assets/img/MiniPaint.png",
-        link: "https://felypedantas.github.io/Gallery_draw/",
+        link: "https://vercel.com/felypedantas-projects/mini-paint/4r83wFmhTquxUfKBgQoq3TJ5wDA4",
         alt: "Mini Paint"
     }
 ];
