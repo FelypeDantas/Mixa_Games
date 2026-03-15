@@ -82,6 +82,12 @@ const projects = [
         imgSrc: "./assets/img/MiniPaint.png",
         link: "https://vercel.com/felypedantas-projects/mini-paint/4r83wFmhTquxUfKBgQoq3TJ5wDA4",
         alt: "Mini Paint"
+    },
+    {
+        title: "Jogo da Agulha",
+        imgSrc: "./assets/img/jogo_da_agulha.png",
+        link: "./assets/projects/Jogo_da_Agulha/index.html",
+        alt: "Jogo da Agulha"
     }
 ];
 

@@ -1,0 +1,41 @@
+body{
+    font-family: Arial;
+    text-align:center;
+    background:#1e1e1e;
+    color:white;
+}
+
+.menu{
+    margin:20px;
+}
+
+.painel{
+    margin:15px;
+    font-size:18px;
+}
+
+#game{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, 60px);
+    justify-content:center;
+    gap:10px;
+    margin-top:20px;
+}
+
+.feno{
+    font-size:35px;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.feno:hover{
+    transform:scale(1.2);
+}
+
+.errado{
+    opacity:0.3;
+}
+
+.needle{
+    color:gold;
+}

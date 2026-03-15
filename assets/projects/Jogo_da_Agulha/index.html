@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<title>Agulha no Palheiro</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>🪡 Agulha no Palheiro</h1>
+
+<div class="menu">
+
+<select id="dificuldade">
+<option value="20">Fácil (20 fenos)</option>
+<option value="35">Médio (35 fenos)</option>
+<option value="50">Difícil (50 fenos)</option>
+</select>
+
+<button onclick="iniciarJogo()">Novo Jogo</button>
+
+</div>
+
+<div class="painel">
+
+<span>⏱️ Tempo: <b id="tempo">0</b>s</span>
+<span>❌ Erros: <b id="erros">0</b></span>
+<span>🏆 Pontuação: <b id="pontuacao">0</b></span>
+
+</div>
+
+<div id="game"></div>
+
+<p id="resultado"></p>
+
+<script src="script.js"></script>
+
+</body>
+</html>
