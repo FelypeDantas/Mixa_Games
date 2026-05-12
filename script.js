@@ -18,16 +18,16 @@ const projects = [
         alt: "Projeto Loteria"
     },
     {
-        title: "Numero secreto",
+        title: "Número Secreto",
         imgSrc: "./assets/img/Numero_secreto.png",
         link: "./assets/projects/Jogo-do-numero-secreto/index.html",
-        alt: "Projeto Numero secreto"
+        alt: "Projeto Número Secreto"
     },
     {
-        title: "Alura-Midi",
+        title: "Alura Midi",
         imgSrc: "./assets/img/alura-midi.png",
         link: "./assets/projects/Alura-Midi/index.html",
-        alt: "Projeto Alura-Midi"
+        alt: "Projeto Alura Midi"
     },
     {
         title: "Detona Ralph",
@@ -36,34 +36,34 @@ const projects = [
         alt: "Projeto Detona Ralph"
     },
     {
-        title: "Jogo da memoria",
+        title: "Jogo da Memória",
         imgSrc: "./assets/img/memoria.png",
         link: "./assets/projects/Jogo_Da_Memoria/index.html",
-        alt: "Projeto Jogo da memoria"
+        alt: "Projeto Jogo da Memória"
     },
     {
-        title: "Jogo do numero secreto por voz",
+        title: "Número Secreto por Voz",
         imgSrc: "./assets/img/Numero_voz.PNG",
         link: "https://numero-secreto-reconhecimento-voz-seven.vercel.app/",
-        alt: "Projeto Jogo do numero secreto por voz"
+        alt: "Projeto Número Secreto por Voz"
     },
     {
-        title: "Pokedex",
+        title: "Pokédex",
         imgSrc: "./assets/img/pokedex.gif",
         link: "./assets/projects/pokedex/index.html",
-        alt: "Pokedex"
+        alt: "Pokédex"
     },
     {
-        title: "Yo-Gi-Oh",
+        title: "Yu-Gi-Oh",
         imgSrc: "./assets/img/Yo-Gi-Oh.gif",
         link: "./assets/projects/js-yugioh/index.html",
-        alt: "Yo-Gi-Oh"
+        alt: "Yu-Gi-Oh"
     },
     {
-        title: "Teclado",
+        title: "Teclado Musical",
         imgSrc: "./assets/img/Teclado.gif",
         link: "./assets/projects/Teclado/index.html",
-        alt: "Teclado"
+        alt: "Teclado Musical"
     },
     {
         title: "Mario Jump",
@@ -72,15 +72,15 @@ const projects = [
         alt: "Mario Jump"
     },
     {
-        title: "Jogo da velha",
+        title: "Jogo da Velha",
         imgSrc: "./assets/img/jogodavelha.png",
         link: "./assets/projects/jogodaVelha/index.html",
-        alt: "Jogo da velha"
+        alt: "Jogo da Velha"
     },
     {
         title: "Mini Paint",
         imgSrc: "./assets/img/MiniPaint.png",
-        link: "https://vercel.com/felypedantas-projects/mini-paint/4r83wFmhTquxUfKBgQoq3TJ5wDA4",
+        link: "https://mini-paint.vercel.app/",
         alt: "Mini Paint"
     },
     {
@@ -91,25 +91,60 @@ const projects = [
     }
 ];
 
-// Função para criar e adicionar os cards ao DOM
-function createCards() {
-    const container = document.getElementById('card-container');
+/* =========================
+   CRIAÇÃO DOS CARDS
+========================= */
 
-    projects.forEach(project => {
-        const card = document.createElement('div');
-        card.className = 'card m-4';
-        card.style.width = '20rem';
+const container = document.getElementById('card-container');
 
-        card.innerHTML = `
-            <img src="${project.imgSrc}" class="card-img-top" alt="${project.alt}" loading="lazy">
-            <div class="card-body">
-                <h5 class="card-title py-2 fw-bold">${project.title}</h5>
-                <a href="${project.link}" class="btn botao-padrao w-100 fw-bold" aria-controls="offcanvasRight">Quero Jogar</a>
-            </div>
-        `;
+function createCard(project) {
+    const card = document.createElement('article');
 
-        container.appendChild(card);
-    });
+    card.className = 'card shadow-lg';
+
+    card.innerHTML = `
+        <img 
+            src="${project.imgSrc}" 
+            class="card-img-top"
+            alt="${project.alt}"
+            loading="lazy"
+        >
+
+        <div class="card-body d-flex flex-column justify-content-between">
+            
+            <h5 class="card-title py-2 fw-bold">
+                ${project.title}
+            </h5>
+
+            <a 
+                href="${project.link}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn botao-padrao fw-bold mt-3"
+            >
+                🎮 Quero Jogar
+            </a>
+
+        </div>
+    `;
+
+    return card;
 }
 
-createCards();
+/* =========================
+   RENDERIZAÇÃO
+========================= */
+
+function renderProjects() {
+    if (!container) return;
+
+    const fragment = document.createDocumentFragment();
+
+    projects.forEach(project => {
+        fragment.appendChild(createCard(project));
+    });
+
+    container.appendChild(fragment);
+}
+
+renderProjects();
