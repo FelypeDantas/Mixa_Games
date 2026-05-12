@@ -1,52 +1,110 @@
 @import url('./reset.css');
 
+/* TÍTULO */
+
 h1 {
-    align-items: center;
-    font-weight: 800;
-    font-size: 40px;
-    margin-top: 1rem;
     text-align: center;
-    transform: uppercase;
-    letter-spacing: .1rem;
+    font-weight: 800;
+    font-size: 3rem;
+    margin: 2rem 0;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    color: #ffffff;
 }
+
+/* ÁREA DOS CARDS */
+
+#card-container {
+    gap: 2rem;
+}
+
+/* CARD */
 
 .card-wrapper {
-    display: inline-block; 
-    transition: padding 0.3s ease; 
-}
-
-.card {
-    transition: transform 0.3s ease, box-shadow 0.3 ease;
-}
-
-.card:hover {
-    transform: scale(1.05) rotateY(360deg);
-    z-index: 1;
-    padding: 1.5rem;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.card-img-top {
-    display: block;
     transition: transform 0.3s ease;
 }
 
-.card-img-top:hover {
-    transform: scale(1.1); 
+.card {
+    width: 18rem;
+    overflow: hidden;
+    border: none !important;
+    border-radius: 20px !important;
+    background: #1e293b !important;
+    color: white !important;
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
 }
 
+/* HOVER */
+
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.4),
+        0 0 20px rgba(255, 165, 0, 0.2);
+}
+
+/* IMAGEM */
+
+.card-img-top {
+    height: 250px;
+    object-fit: cover;
+
+    transition: transform 0.4s ease;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.08);
+}
+
+/* TEXTO */
+
+.card-body {
+    background: #1e293b;
+}
+
+.card-title {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.card-text {
+    text-align: center;
+    color: #cbd5e1;
+}
+
+/* BOTÃO */
+
 .botao-padrao.btn {
-    background-color: #ffa500; 
-    color: #ffffff; 
-    border: none; 
+    width: 100%;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ff9800, #ff5722);
+    color: white;
+    border: none;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
 }
 
 .botao-padrao.btn:hover {
-    background-color: darkorange; 
-    color: white; 
+    transform: scale(1.03);
+    opacity: 0.9;
 }
 
-.card-title{
-    text-align: center;
-}
+/* RESPONSIVIDADE */
 
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+        padding: 0 1rem;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 320px;
+    }
+}
