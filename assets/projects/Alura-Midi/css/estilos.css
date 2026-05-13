@@ -1,67 +1,175 @@
 :root {
-  --cinza: #aaa;
-  --vermelha: #e93d50;
-  --vermelha-escura: #af303f;
-  --branca: #fff;
-  --luz: rgb(229, 255, 0);
+
+    --bg: #0f172a;
+    --card: #1e293b;
+
+    --primary: #ff4d6d;
+    --primary-dark: #c9184a;
+
+    --white: #ffffff;
+    --light: #f8fafc;
+
+    --glow: rgba(255, 77, 109, 0.6);
+
 }
+
+/* BODY */
 
 body {
-  align-items: center;
-  background: linear-gradient(45deg, #a7cfdf 0%,#23538a 100%);
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  font-family: 'Montserrat', sans-serif;
-  min-height: 100vh;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 2rem;
+
+    font-family: 'Montserrat', sans-serif;
+
+    background:
+        radial-gradient(circle at top, #1e293b 0%, #0f172a 70%);
+
+    color: var(--white);
 }
 
-h1 {
-  color: var(--branca);
-  margin-bottom: 20px;
-  font-size: 2rem;
+/* APP */
+
+.app {
+    width: 100%;
+    max-width: 700px;
 }
+
+/* HERO */
+
+.hero {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.hero h1 {
+
+    font-size: 3rem;
+    font-weight: 800;
+
+    margin-bottom: .5rem;
+
+    letter-spacing: .1rem;
+}
+
+.hero p {
+
+    color: #cbd5e1;
+    font-size: 1rem;
+
+}
+
+/* TECLADO */
 
 .teclado {
-  background: linear-gradient(to bottom, #eeeeee 0%,#cccccc 100%);
-  box-shadow: 6px 8px 0 6px #666, 10px 10px 10px #000;
-  border-radius: 30px;
-  display: grid;
-  gap: 10px;
-  grid-template-columns: repeat(3, 1fr);
-  padding: 10px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 1rem;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    backdrop-filter: blur(10px);
+
+    padding: 2rem;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
+/* TECLAS */
+
 .tecla {
-  background-color: var(--branca);
-  border-radius: 30px;
-  box-shadow: 3px 3px 0 var(--cinza);
-  color: var(--vermelha);
-  cursor: pointer;
-  height: 120px;
-  font-size: 1.75em;
-  font-weight: bold;
-  line-height: 120px;
-  text-align: center;
-  width: 120px;
+
+    height: 120px;
+
+    border-radius: 20px;
+
+    background: var(--card);
+
+    color: var(--white);
+
+    font-size: 1.4rem;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+
+    box-shadow:
+        0 6px 0 rgba(0, 0, 0, 0.4);
+
 }
+
+/* HOVER */
+
+.tecla:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 20px rgba(0, 0, 0, 0.3),
+        0 0 15px var(--glow);
+
+}
+
+/* ATIVA */
 
 .tecla.ativa,
 .tecla:active {
-  background-color: var(--vermelha);
-  border: 4px solid  var(--vermelha);
-  box-shadow: 3px 3px 0 var(--vermelha-escura) inset;
-  color: var(--branca);
-  outline: none;
+
+    transform: scale(0.96);
+
+    background: var(--primary);
+
+    box-shadow:
+        inset 0 4px 10px rgba(0, 0, 0, 0.4),
+        0 0 20px var(--glow);
+
 }
 
-.tecla.focus,
+/* FOCUS */
+
 .tecla:focus {
-  outline: none;
-  box-shadow: 1px 1px 10px var(--luz);
+
+    outline: 3px solid var(--primary);
+
+    outline-offset: 4px;
+
 }
 
-.tecla.active:focus,
-.tecla:active:focus {
-  box-shadow: 3px 3px 0 var(--vermelha-escura) inset, 1px 1px 10px var(--luz);
+/* RESPONSIVO */
+
+@media (max-width: 600px) {
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .teclado {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    .tecla {
+
+        height: 100px;
+
+        font-size: 1.1rem;
+
+    }
+
 }
