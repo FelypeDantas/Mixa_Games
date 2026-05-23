@@ -1,50 +1,240 @@
-@import url('./reset.css');
+@import url("./reset.css");
 
-/* TÍTULO */
+/* =========================
+   🎨 TOKENS
+========================= */
+
+:root {
+    --bg-card: #1e293b;
+    --bg-card-hover: #273549;
+
+    --text-primary: #ffffff;
+    --text-secondary: #cbd5e1;
+
+    --accent-start: #ff9800;
+    --accent-end: #ff5722;
+
+    --shadow-default: 0 10px 25px rgba(0, 0, 0, 0.25);
+    --shadow-hover:
+        0 18px 40px rgba(0, 0, 0, 0.45),
+        0 0 25px rgba(255, 140, 0, 0.2);
+
+    --radius-lg: 24px;
+    --radius-md: 16px;
+
+    --transition:
+        0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* =========================
+   🌌 BASE
+========================= */
+
+body {
+    color: var(--text-primary);
+}
+
+/* =========================
+   🏷️ TÍTULO
+========================= */
 
 h1 {
     text-align: center;
-    font-weight: 800;
-    font-size: 3rem;
-    margin: 2rem 0;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    font-weight: 900;
+    letter-spacing: 0.25rem;
     text-transform: uppercase;
-    letter-spacing: .2rem;
-    color: #ffffff;
+
+    margin: 2.5rem 0;
+
+    color: var(--text-primary);
+
+    position: relative;
 }
 
-/* ÁREA DOS CARDS */
+h1::after {
+    content: "";
+
+    display: block;
+
+    width: 120px;
+    height: 5px;
+
+    margin: 1rem auto 0;
+
+    border-radius: 999px;
+
+    background: linear-gradient(
+        90deg,
+        var(--accent-start),
+        var(--accent-end)
+    );
+}
+
+/* =========================
+   🧩 CONTAINER
+========================= */
 
 #card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
+
+    padding: 1rem;
 }
 
-/* CARD */
+/* =========================
+   🃏 CARD
+========================= */
 
 .card-wrapper {
-    transition: transform 0.3s ease;
+    animation: fadeUp 0.6s ease both;
 }
 
 .card {
-    width: 18rem;
+    width: 100%;
+    max-width: 18rem;
+
     overflow: hidden;
-    border: none !important;
-    border-radius: 20px !important;
-    background: #1e293b !important;
-    color: white !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: var(--radius-lg) !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.04),
+            rgba(255, 255, 255, 0.01)
+        ),
+        var(--bg-card) !important;
+
+    color: var(--text-primary) !important;
+
+    box-shadow: var(--shadow-default);
+
+    backdrop-filter: blur(10px);
 
     transition:
-        transform 0.4s ease,
-        box-shadow 0.4s ease;
+        transform var(--transition),
+        box-shadow var(--transition),
+        background var(--transition);
 }
 
-.card {
-    animation: fadeUp .6s ease;
+.card:hover {
+    transform: translateY(-12px) scale(1.03);
+
+    background: var(--bg-card-hover) !important;
+
+    box-shadow: var(--shadow-hover);
 }
+
+/* =========================
+   🖼️ IMAGEM
+========================= */
+
+.card-img-top {
+    width: 100%;
+    height: 250px;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.08);
+    filter: brightness(1.08);
+}
+
+/* =========================
+   ✍️ CONTEÚDO
+========================= */
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    padding: 1.4rem;
+
+    background: transparent;
+}
+
+.card-title {
+    text-align: center;
+
+    font-size: 1.35rem;
+    font-weight: 800;
+
+    margin: 0;
+}
+
+.card-text {
+    text-align: center;
+
+    line-height: 1.6;
+
+    color: var(--text-secondary);
+
+    margin: 0;
+}
+
+/* =========================
+   🔥 BOTÃO
+========================= */
+
+.botao-padrao.btn {
+    width: 100%;
+
+    padding: 0.85rem 1rem;
+
+    border: none;
+    border-radius: var(--radius-md);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--accent-start),
+            var(--accent-end)
+        );
+
+    color: white;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 8px 18px rgba(255, 87, 34, 0.25);
+
+    transition:
+        transform var(--transition),
+        opacity var(--transition),
+        box-shadow var(--transition);
+}
+
+.botao-padrao.btn:hover {
+    transform: translateY(-2px);
+
+    opacity: 0.95;
+
+    box-shadow:
+        0 12px 24px rgba(255, 87, 34, 0.35);
+}
+
+.botao-padrao.btn:active {
+    transform: scale(0.98);
+}
+
+/* =========================
+   ✨ ANIMAÇÕES
+========================= */
 
 @keyframes fadeUp {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(24px);
     }
 
     to {
@@ -53,74 +243,38 @@ h1 {
     }
 }
 
-/* HOVER */
-
-.card:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow:
-        0 15px 30px rgba(0, 0, 0, 0.4),
-        0 0 20px rgba(255, 165, 0, 0.2);
-}
-
-/* IMAGEM */
-
-.card-img-top {
-    height: 250px;
-    object-fit: cover;
-
-    transition: transform 0.4s ease;
-}
-
-.card:hover .card-img-top {
-    transform: scale(1.08);
-}
-
-/* TEXTO */
-
-.card-body {
-    background: #1e293b;
-}
-
-.card-title {
-    text-align: center;
-    font-size: 1.3rem;
-    font-weight: bold;
-}
-
-.card-text {
-    text-align: center;
-    color: #cbd5e1;
-}
-
-/* BOTÃO */
-
-.botao-padrao.btn {
-    width: 100%;
-    border-radius: 12px;
-    background: linear-gradient(135deg, #ff9800, #ff5722);
-    color: white;
-    border: none;
-
-    transition:
-        transform 0.3s ease,
-        opacity 0.3s ease;
-}
-
-.botao-padrao.btn:hover {
-    transform: scale(1.03);
-    opacity: 0.9;
-}
-
-/* RESPONSIVIDADE */
+/* =========================
+   📱 RESPONSIVIDADE
+========================= */
 
 @media (max-width: 768px) {
-    h1 {
-        font-size: 2rem;
-        padding: 0 1rem;
+    #card-container {
+        gap: 1.5rem;
     }
 
     .card {
-        width: 100%;
         max-width: 320px;
+    }
+
+    .card-img-top {
+        height: 220px;
+    }
+
+    .card-body {
+        padding: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        letter-spacing: 0.12rem;
+    }
+
+    .card {
+        max-width: 100%;
+    }
+
+    .card-img-top {
+        height: 200px;
     }
 }
